@@ -1,7 +1,8 @@
 FROM debian:buster-slim
 #Initial Commit
 SHELL ["/bin/bash", "-c"]
-RUN apt install curl -y
+RUN apt update \
+    && apt install curl -y
 ENV NVM_DIR="/opt/nvm"
 RUN mkdir /opt/nvm \
     && cd /opt/nvm/ \
