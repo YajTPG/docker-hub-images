@@ -2,7 +2,7 @@ FROM debian:buster-slim
 #Initial Commit
 SHELL ["/bin/bash", "-c"]
 RUN apt update \
-    && apt install curl -y
+    && apt install curl gnupg -y
 ENV NVM_DIR="/opt/nvm"
 RUN mkdir /opt/nvm \
     && cd /opt/nvm/ \
