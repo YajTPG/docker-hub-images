@@ -1,12 +1,12 @@
 FROM debian:buster-slim
-#Initial Commit
+
 SHELL ["/bin/bash", "-c"]
 RUN apt update \
     && apt install curl gnupg -y
 ENV NVM_DIR="/opt/nvm"
 RUN mkdir /opt/nvm \
     && cd /opt/nvm/ \
-    && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash 
+    && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 ENV PATH /opt/nvm:$PATH
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
